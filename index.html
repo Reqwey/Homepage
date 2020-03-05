@@ -6,12 +6,15 @@
 -->
 <html>
 	<head>
+		<script src='https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js'></script>
+		<link rel='stylesheet' href='https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css'/>
 		<title>Welcome</title>
 		<link rel="icon" type="image/x-icon" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-favicon@19.9.6/favicon-32x32.png">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>NProgress.start();</script>
 	</head>
 	<body class="is-preload">
 
@@ -89,6 +92,6 @@
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
-
+		<script>NProgress.done();</script>
 	</body>
 </html>
