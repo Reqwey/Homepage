@@ -7,8 +7,7 @@
 <html>
 	<head>
 		
-		<link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css">
-		<script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="external nofollow">
 		<script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css"> -->
 		<title>Welcome</title>
@@ -94,37 +93,19 @@
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 			</script>
-			 <script>
-				document.body.style.display = 'block'
-
-				NProgress.start()
-
-				setTimeout(function() {
-				NProgress.done()
-				var els = [].slice.call(document.querySelectorAll('.out'))
-				els.forEach(function (el) {
-					el.className = el.className.replace(' out', '')
-				})
-				}, 600)
-
-				on(id('b-0'), 'click', function () { NProgress.start() })
-				on(id('b-40'), 'click', function () { NProgress.set(0.4) })
-				on(id('b-inc'), 'click', function () { NProgress.inc() })
-				on(id('b-100'), 'click', function () { NProgress.done() })
-
-				function id (val) {
-				return document.getElementById(val)
-				}
-
-				function on (el, event, handler) {
-				if (el.addEventListener) {
-					el.addEventListener(event, handler)
-				} else {
-					el.attachEvent('on' + event, function () {
-					handler.call(el)
+			<script src="nprogress.js"></script>
+			<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+			<script>
+				$(document)
+					.ajaxStart(function () {
+						//请求开始了
+						NProgress.start();
 					})
-				}
-				}
+					.ajaxStop(function () {
+						//请求结束了
+						NProgress.done();
+					})
+				$.get('time.php')
 			</script>
 	</body>
 </html>
