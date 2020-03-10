@@ -6,10 +6,10 @@
 -->
 <html>
 	<head>
-		
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="external nofollow">
 		<script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+		<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 		<!-- <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css"> -->
 		<title>Welcome</title>
 		<link rel="icon" type="image/x-icon" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-favicon@19.9.6/favicon-32x32.png">
@@ -20,6 +20,18 @@
 	</head>
 	<body class="is-preload">
 
+			<script>
+				$(document)
+					.ajaxStart(function () {
+						//请求开始了
+						NProgress.start();
+					})
+					.ajaxStop(function () {
+						//请求结束了
+						NProgress.done();
+					})
+				$.get('time.php')
+			</script>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -57,18 +69,6 @@
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
-			</script>
-			<script>
-				$(document)
-					.ajaxStart(function () {
-						//请求开始了
-						NProgress.start();
-					})
-					.ajaxStop(function () {
-						//请求结束了
-						NProgress.done();
-					})
-				$.get('time.php')
 			</script>
 	</body>
 </html>
