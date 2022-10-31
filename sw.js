@@ -1,7 +1,9 @@
-var CACHE_NAME = 'hi-reqwey-cache-v1';  
+var CACHE_NAME = 'hi-reqwey-cache-202210311404';  
 var urlsToCache = [  
     '/',
     '/assets/images/avatar.png',
+    '/assets/images/appicon.png',
+    '/assets/images/appiconsmall.png',
     '/assets/images/favicon.ico',
     '/assets/images/background.webp',
     '/assets/css/reqwey.min.css',
